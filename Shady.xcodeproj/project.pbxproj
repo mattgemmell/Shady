@@ -1,0 +1,397 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
+		256AC3DA0F4B6AC300CF3369 /* ShadyAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* ShadyAppDelegate.m */; };
+		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
+		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
+		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		C9119049109F74D900EE7B84 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9119048109F74D900EE7B84 /* QuartzCore.framework */; };
+		C940E3F610A05A36001EE8BF /* Shady.icns in Resources */ = {isa = PBXBuildFile; fileRef = C940E3F510A05A36001EE8BF /* Shady.icns */; };
+		C940E40A10A05CB6001EE8BF /* Shady_Subdued.icns in Resources */ = {isa = PBXBuildFile; fileRef = C940E40910A05CB6001EE8BF /* Shady_Subdued.icns */; };
+		C9711F00109F4572003125E7 /* MGTransparentWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = C9711EFF109F4572003125E7 /* MGTransparentWindow.m */; };
+		C9906E8910A4C2B7003C9798 /* NSApplication+DockIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = C9906E8810A4C2B7003C9798 /* NSApplication+DockIcon.m */; };
+		C9906ECA10A4C51C003C9798 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9906EC910A4C51C003C9798 /* Carbon.framework */; };
+		C9906F9210A4D1C6003C9798 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9906F9110A4D1C6003C9798 /* Sparkle.framework */; };
+		C9906F9810A4D1EE003C9798 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C9906F9110A4D1C6003C9798 /* Sparkle.framework */; };
+		C9906FA310A4D381003C9798 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = C9906FA210A4D381003C9798 /* dsa_pub.pem */; };
+		C9A3A24E109F67E500E483C0 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = C9A3A24C109F67E500E483C0 /* Credits.html */; };
+		C9B629FC10A200C200A67B48 /* Shady_Menu_Dark.png in Resources */ = {isa = PBXBuildFile; fileRef = C9B629FA10A200C200A67B48 /* Shady_Menu_Dark.png */; };
+		C9B629FD10A200C200A67B48 /* Shady_Menu_Light.png in Resources */ = {isa = PBXBuildFile; fileRef = C9B629FB10A200C200A67B48 /* Shady_Menu_Light.png */; };
+		C9F3742A10A60E5800025D8B /* Shady_Menu_Dark_Off.png in Resources */ = {isa = PBXBuildFile; fileRef = C9F3742810A60E5800025D8B /* Shady_Menu_Dark_Off.png */; };
+		C9F3742B10A60E5800025D8B /* Shady_Menu_Light_Off.png in Resources */ = {isa = PBXBuildFile; fileRef = C9F3742910A60E5800025D8B /* Shady_Menu_Light_Off.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C9906FA110A4D205003C9798 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C9906F9810A4D1EE003C9798 /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		1DDD58150DA1D0A300B32029 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		256AC3D80F4B6AC300CF3369 /* ShadyAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShadyAppDelegate.h; sourceTree = "<group>"; };
+		256AC3D90F4B6AC300CF3369 /* ShadyAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShadyAppDelegate.m; sourceTree = "<group>"; };
+		256AC3F00F4B6AF500CF3369 /* Shady_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shady_Prefix.pch; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		8D1107310486CEB800E47090 /* Shady-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Shady-Info.plist"; sourceTree = "<group>"; };
+		8D1107320486CEB800E47090 /* Shady.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shady.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9119048109F74D900EE7B84 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		C940E3F510A05A36001EE8BF /* Shady.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Shady.icns; sourceTree = "<group>"; };
+		C940E40910A05CB6001EE8BF /* Shady_Subdued.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Shady_Subdued.icns; sourceTree = "<group>"; };
+		C9711EFE109F4572003125E7 /* MGTransparentWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGTransparentWindow.h; sourceTree = "<group>"; };
+		C9711EFF109F4572003125E7 /* MGTransparentWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGTransparentWindow.m; sourceTree = "<group>"; };
+		C9906E8710A4C2B7003C9798 /* NSApplication+DockIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSApplication+DockIcon.h"; sourceTree = "<group>"; };
+		C9906E8810A4C2B7003C9798 /* NSApplication+DockIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSApplication+DockIcon.m"; sourceTree = "<group>"; };
+		C9906EC910A4C51C003C9798 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		C9906F9110A4D1C6003C9798 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		C9906FA210A4D381003C9798 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
+		C9A3A24D109F67E500E483C0 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = English; path = English.lproj/Credits.html; sourceTree = "<group>"; };
+		C9B629FA10A200C200A67B48 /* Shady_Menu_Dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Shady_Menu_Dark.png; sourceTree = "<group>"; };
+		C9B629FB10A200C200A67B48 /* Shady_Menu_Light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Shady_Menu_Light.png; sourceTree = "<group>"; };
+		C9B62A0F10A2021100A67B48 /* Shady_Menu_Icons.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = Shady_Menu_Icons.psd; sourceTree = "<group>"; };
+		C9F3742810A60E5800025D8B /* Shady_Menu_Dark_Off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Shady_Menu_Dark_Off.png; sourceTree = "<group>"; };
+		C9F3742910A60E5800025D8B /* Shady_Menu_Light_Off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Shady_Menu_Light_Off.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D11072E0486CEB800E47090 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				C9119049109F74D900EE7B84 /* QuartzCore.framework in Frameworks */,
+				C9906ECA10A4C51C003C9798 /* Carbon.framework in Frameworks */,
+				C9906F9210A4D1C6003C9798 /* Sparkle.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				256AC3D80F4B6AC300CF3369 /* ShadyAppDelegate.h */,
+				256AC3D90F4B6AC300CF3369 /* ShadyAppDelegate.m */,
+				C9711EFE109F4572003125E7 /* MGTransparentWindow.h */,
+				C9711EFF109F4572003125E7 /* MGTransparentWindow.m */,
+				C9906E8710A4C2B7003C9798 /* NSApplication+DockIcon.h */,
+				C9906E8810A4C2B7003C9798 /* NSApplication+DockIcon.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C9906F9110A4D1C6003C9798 /* Sparkle.framework */,
+				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+				C9119048109F74D900EE7B84 /* QuartzCore.framework */,
+				C9906EC910A4C51C003C9798 /* Carbon.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
+				13E42FB307B3F0F600E4EEF1 /* CoreData.framework */,
+				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D1107320486CEB800E47090 /* Shady.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* Shady */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = Shady;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				256AC3F00F4B6AF500CF3369 /* Shady_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
+				8D1107310486CEB800E47090 /* Shady-Info.plist */,
+				C9A3A24C109F67E500E483C0 /* Credits.html */,
+				C9F3743C10A614C700025D8B /* Images */,
+				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
+				C9906FA210A4D381003C9798 /* dsa_pub.pem */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
+				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C9F3743C10A614C700025D8B /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				C940E3F510A05A36001EE8BF /* Shady.icns */,
+				C940E40910A05CB6001EE8BF /* Shady_Subdued.icns */,
+				C9B629FA10A200C200A67B48 /* Shady_Menu_Dark.png */,
+				C9B629FB10A200C200A67B48 /* Shady_Menu_Light.png */,
+				C9F3742810A60E5800025D8B /* Shady_Menu_Dark_Off.png */,
+				C9F3742910A60E5800025D8B /* Shady_Menu_Light_Off.png */,
+				C9B62A0F10A2021100A67B48 /* Shady_Menu_Icons.psd */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D1107260486CEB800E47090 /* Shady */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Shady" */;
+			buildPhases = (
+				8D1107290486CEB800E47090 /* Resources */,
+				8D11072C0486CEB800E47090 /* Sources */,
+				8D11072E0486CEB800E47090 /* Frameworks */,
+				C9906FA110A4D205003C9798 /* CopyFiles */,
+				C9906FA710A4D895003C9798 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Shady;
+			productInstallPath = "$(HOME)/Applications";
+			productName = Shady;
+			productReference = 8D1107320486CEB800E47090 /* Shady.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Shady" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* Shady */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D1107260486CEB800E47090 /* Shady */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D1107290486CEB800E47090 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
+				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
+				C9A3A24E109F67E500E483C0 /* Credits.html in Resources */,
+				C940E3F610A05A36001EE8BF /* Shady.icns in Resources */,
+				C940E40A10A05CB6001EE8BF /* Shady_Subdued.icns in Resources */,
+				C9B629FC10A200C200A67B48 /* Shady_Menu_Dark.png in Resources */,
+				C9B629FD10A200C200A67B48 /* Shady_Menu_Light.png in Resources */,
+				C9906FA310A4D381003C9798 /* dsa_pub.pem in Resources */,
+				C9F3742A10A60E5800025D8B /* Shady_Menu_Dark_Off.png in Resources */,
+				C9F3742B10A60E5800025D8B /* Shady_Menu_Light_Off.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C9906FA710A4D895003C9798 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "set -o errexit\n\n[ $BUILD_STYLE = Release ] || { echo Distribution target requires \"'Release'\" build style; false; }\n\nVERSION=$(defaults read \"$BUILT_PRODUCTS_DIR/$PROJECT_NAME.app/Contents/Info\" CFBundleVersion)\nDOWNLOAD_BASE_URL=\"http:/instinctivecode.com/shady\"\nRELEASENOTES_URL=\"http://instinctivecode.com/shady/release-notes.html#version-$VERSION\"\n\nARCHIVE_FILENAME=\"$PROJECT_NAME$VERSION.zip\"\nDOWNLOAD_URL=\"$DOWNLOAD_BASE_URL/$ARCHIVE_FILENAME\"\nKEYCHAIN_PRIVKEY_NAME=\"Sparkle Private Key for Shady\"\n\nWD=$PWD\ncd \"$BUILT_PRODUCTS_DIR\"\nrm -f \"$PROJECT_NAME\"*.zip\nditto -ck --keepParent \"$PROJECT_NAME.app\" \"$ARCHIVE_FILENAME\"\n\nSIZE=$(stat -f %z \"$ARCHIVE_FILENAME\")\nPUBDATE=$(date +\"%a, %d %b %G %T %z\")\nSIGNATURE=$(\n\topenssl dgst -sha1 -binary < \"$ARCHIVE_FILENAME\" \\\n\t| openssl dgst -dss1 -sign <(security find-generic-password -g -s \"$KEYCHAIN_PRIVKEY_NAME\" 2>&1 1>/dev/null | perl -pe '($_) = /\"(.+)\"/; s/\\\\012/\\n/g' | perl -MXML::LibXML -e 'print XML::LibXML->new()->parse_file(\"-\")->findvalue(q(//string[preceding-sibling::key[1] = \"NOTE\"]))') \\\n\t| openssl enc -base64\n)\n\n[ $SIGNATURE ] || { echo Unable to load signing private key with name \"'$KEYCHAIN_PRIVKEY_NAME'\" from keychain; false; }\n\ncat <<EOF\n\t\t<item>\n\t\t\t<title>Version $VERSION</title>\n\t\t\t<sparkle:releaseNotesLink>$RELEASENOTES_URL</sparkle:releaseNotesLink>\n\t\t\t<pubDate>$PUBDATE</pubDate>\n\t\t\t<enclosure\n\t\t\t\turl=\"$DOWNLOAD_URL\"\n\t\t\t\tsparkle:version=\"$VERSION\"\n\t\t\t\ttype=\"application/octet-stream\"\n\t\t\t\tlength=\"$SIZE\"\n\t\t\t\tsparkle:dsaSignature=\"$SIGNATURE\"\n\t\t\t/>\n\t\t</item>\nEOF\n\necho scp \"'$HOME/code/Shady/build/Release/$ARCHIVE_FILENAME'\" www.instinctivecode.com:shady/\necho scp \"'$WD/appcast.xml'\" www.instinctivecode.com:appcasts/shady.xml";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D11072C0486CEB800E47090 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072D0486CEB800E47090 /* main.m in Sources */,
+				256AC3DA0F4B6AC300CF3369 /* ShadyAppDelegate.m in Sources */,
+				C9711F00109F4572003125E7 /* MGTransparentWindow.m in Sources */,
+				C9906E8910A4C2B7003C9798 /* NSApplication+DockIcon.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C165DFE840E0CC02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1DDD58140DA1D0A300B32029 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1DDD58150DA1D0A300B32029 /* English */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		C9A3A24C109F67E500E483C0 /* Credits.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C9A3A24D109F67E500E483C0 /* English */,
+			);
+			name = Credits.html;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C01FCF4B08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Shady_Prefix.pch;
+				INFOPLIST_FILE = "Shady-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = Shady;
+			};
+			name = Debug;
+		};
+		C01FCF4C08A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Shady_Prefix.pch;
+				INFOPLIST_FILE = "Shady-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = Shady;
+				SDKROOT = macosx10.5;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Shady" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4B08A954540054247B /* Debug */,
+				C01FCF4C08A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Shady" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
