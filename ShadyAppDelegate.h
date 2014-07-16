@@ -7,8 +7,8 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface ShadyAppDelegate : NSObject {
-    NSWindow *window;
+@interface ShadyAppDelegate : NSObject <NSWindowDelegate> {
+    NSArray *windows;
 	float opacity;
 	BOOL showsHelpWhenActive;
 	NSWindow *helpWindow;
@@ -22,7 +22,6 @@
 	BOOL shadyEnabled;
 }
 
-@property (assign) IBOutlet NSWindow *window;
 @property (assign) float opacity;
 @property (assign) IBOutlet NSMenu *statusMenu;
 @property (assign) IBOutlet NSSlider *opacitySlider;
