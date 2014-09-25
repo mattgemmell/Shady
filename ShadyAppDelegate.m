@@ -66,8 +66,14 @@
 	NSStatusBar *bar = [NSStatusBar systemStatusBar];
 	statusItem = [bar statusItemWithLength:NSSquareStatusItemLength];
 	[statusItem retain];
-	[statusItem setImage:STATUS_MENU_ICON];
-	[statusItem setAlternateImage:STATUS_MENU_ICON_ALT];
+	
+	NSImage* image = STATUS_MENU_ICON;
+	[image setTemplate:YES];
+	[statusItem setImage:image];
+	
+	NSImage* altImage = STATUS_MENU_ICON_ALT;
+	[altImage setTemplate:YES];
+	[statusItem setAlternateImage:altImage];
 	[statusItem setHighlightMode:YES];
 	[opacitySlider setFloatValue:(1.0 - opacity)];
 	[statusItem setMenu:statusMenu];
@@ -359,8 +365,16 @@
 	[stateMenuItemStatusBar setTitle:(shadyEnabled) ? STATE_MENU : STATE_MENU_OFF];
 	
 	// Update status item's regular and alt/selected images.
-	[statusItem setImage:(shadyEnabled) ? STATUS_MENU_ICON : STATUS_MENU_ICON_OFF];
-	[statusItem setAlternateImage:(shadyEnabled) ? STATUS_MENU_ICON_ALT : STATUS_MENU_ICON_OFF_ALT];
+	
+	NSImage* image = (shadyEnabled) ? STATUS_MENU_ICON : STATUS_MENU_ICON_OFF;
+	[image setTemplate:YES];
+
+	NSImage* altImage = (shadyEnabled) ? STATUS_MENU_ICON_ALT : STATUS_MENU_ICON_OFF_ALT;
+	[altImage setTemplate:YES];
+
+	
+	[statusItem setImage:image];
+	[statusItem setAlternateImage:altImage];
 	
 	// Enable/disable slider.
 	[opacitySlider setEnabled:shadyEnabled];
