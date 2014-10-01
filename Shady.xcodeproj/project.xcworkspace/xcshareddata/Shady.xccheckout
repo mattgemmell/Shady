@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>AF3FE261-F76A-4A2F-BA74-97FDA29F2714</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Shady</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>3AE09CA7-213A-40F0-B3C4-CE31B326AA8A</key>
+		<string>https://github.com/mattgemmell/Shady.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Shady.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>3AE09CA7-213A-40F0-B3C4-CE31B326AA8A</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/mattgemmell/Shady.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>3AE09CA7-213A-40F0-B3C4-CE31B326AA8A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>3AE09CA7-213A-40F0-B3C4-CE31B326AA8A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Shady</string>
+		</dict>
+	</array>
+</dict>
+</plist>

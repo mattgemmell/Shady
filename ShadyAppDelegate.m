@@ -31,7 +31,6 @@
 
 @implementation ShadyAppDelegate
 
-@synthesize window;
 @synthesize opacity;
 @synthesize statusMenu;
 @synthesize opacitySlider;
@@ -49,10 +48,10 @@
 	// Set the default opacity value and load any saved settings.
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 	[defaults registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:
-								[NSNumber numberWithFloat:DEFAULT_OPACITY], KEY_OPACITY, 
-								[NSNumber numberWithBool:YES], KEY_DOCKICON, 
-								[NSNumber numberWithBool:YES], KEY_ENABLED, 
-								nil]];
+										 [NSNumber numberWithFloat:DEFAULT_OPACITY], KEY_OPACITY,
+										 [NSNumber numberWithBool:YES], KEY_DOCKICON,
+										 [NSNumber numberWithBool:YES], KEY_ENABLED,
+										 nil]];
 	
 	// Set up Dock icon.
 	BOOL showsDockIcon = [defaults boolForKey:KEY_DOCKICON];
@@ -62,53 +61,35 @@
 		[NSApp setShowsDockIcon:showsDockIcon];
 	}
 	
-	// Create transparent window.
-	NSRect screensFrame = [[NSScreen mainScreen] frame];
-	for (NSScreen *thisScreen in [NSScreen screens]) {
-		screensFrame = NSUnionRect(screensFrame, [thisScreen frame]);
-	}
-	window = [[MGTransparentWindow windowWithFrame:screensFrame] retain];
-	
-	// Configure window.
-	[window setReleasedWhenClosed:YES];
-	[window setHidesOnDeactivate:NO];
-	[window setCanHide:NO];
-	[window setCollectionBehavior:NSWindowCollectionBehaviorCanJoinAllSpaces];
-	[window setIgnoresMouseEvents:YES];
-	[window setLevel:NSScreenSaverWindowLevel];
-	[window setDelegate:self];
-	
-	// Configure contentView.
-	NSView *contentView = [window contentView];
-	[contentView setWantsLayer:YES];
-	CALayer *layer = [contentView layer];
-	layer.backgroundColor = CGColorGetConstantColor(kCGColorBlack);
-	layer.opacity = 0;
-	[window makeFirstResponder:contentView];
 	
 	// Activate statusItem.
 	NSStatusBar *bar = [NSStatusBar systemStatusBar];
-    statusItem = [bar statusItemWithLength:NSSquareStatusItemLength];
-    [statusItem retain];
-    [statusItem setImage:STATUS_MENU_ICON];
-	[statusItem setAlternateImage:STATUS_MENU_ICON_ALT];
-    [statusItem setHighlightMode:YES];
+	statusItem = [bar statusItemWithLength:NSSquareStatusItemLength];
+	[statusItem retain];
+	
+	NSImage* image = STATUS_MENU_ICON;
+	[image setTemplate:YES];
+	[statusItem setImage:image];
+	
+	NSImage* altImage = STATUS_MENU_ICON_ALT;
+	[altImage setTemplate:YES];
+	[statusItem setAlternateImage:altImage];
+	[statusItem setHighlightMode:YES];
 	[opacitySlider setFloatValue:(1.0 - opacity)];
-    [statusItem setMenu:statusMenu];
+	[statusItem setMenu:statusMenu];
 	
 	// Set appropriate initial display state.
 	shadyEnabled = [defaults boolForKey:KEY_ENABLED];
-	[self updateEnabledStatus];
-	self.opacity = [defaults floatForKey:KEY_OPACITY];
 	
 	// Only show help text when activated _after_ we've launched and hidden ourselves.
 	showsHelpWhenActive = NO;
 	
+	// Create transparent windows
+	[self loadWindows];
+	
 	// Put this app into the background (the shade won't hide due to how its window is set up above).
 	[NSApp hide:self];
 	
-	// Put window on screen.
-	[window makeKeyAndOrderFront:self];
 }
 
 
@@ -119,15 +100,58 @@
 		[statusItem release];
 		statusItem = nil;
 	}
-	[window removeChildWindow:helpWindow];
+	[helpWindow.parentWindow removeChildWindow:helpWindow];
+	
 	[helpWindow close];
-	[window close];
-	window = nil; // released when closed.
+	[windows makeObjectsPerformSelector:@selector(close)];
+	
+	windows = nil; // released when closed.
 	helpWindow = nil; // released when closed.
 	
 	[super dealloc];
 }
 
+- (void)loadWindows
+{
+	NSMutableArray* array = [[NSMutableArray alloc] init];
+	for( NSScreen* screen in [NSScreen screens] )
+	{
+		MGTransparentWindow* window;
+		window = [[MGTransparentWindow windowWithFrame:screen.frame] retain];
+		
+		// Configure window.
+		[window setReleasedWhenClosed:YES];
+		[window setHidesOnDeactivate:NO];
+		[window setCanHide:NO];
+		if( NSFoundationVersionNumber10_6 <= NSFoundationVersionNumber )
+			[window setCollectionBehavior:NSWindowCollectionBehaviorCanJoinAllSpaces | NSWindowCollectionBehaviorStationary];
+		else
+			[window setCollectionBehavior:NSWindowCollectionBehaviorCanJoinAllSpaces];
+		[window setIgnoresMouseEvents:YES];
+		[window setLevel:NSScreenSaverWindowLevel];
+		[window setDelegate:self];
+		
+		// Configure contentView.
+		NSView *contentView = [window contentView];
+		[contentView setWantsLayer:YES];
+		CALayer *layer = [contentView layer];
+		layer.backgroundColor = CGColorGetConstantColor(kCGColorBlack);
+		layer.opacity = 0;
+		[window makeFirstResponder:contentView];
+		
+		[array addObject: window];
+	}
+	
+	[windows release];
+	windows = array;
+	
+	[self updateEnabledStatus];
+	self.opacity = [[NSUserDefaults standardUserDefaults] floatForKey:KEY_OPACITY];
+	
+	// Put window on screen.
+	[windows makeObjectsPerformSelector:@selector(makeKeyAndOrderFront:) withObject:self];
+	
+}
 
 #pragma mark Notifications handlers
 
@@ -149,7 +173,7 @@
 	BOOL appActive = [NSApp isActive];
 	if (appActive) {
 		// Give the window a kick into focus, so we still get key-presses.
-		[window makeKeyAndOrderFront:self];
+		[windows makeObjectsPerformSelector:@selector(makeKeyAndOrderFront:) withObject:self];
 	}
 	
 	if (!showsHelpWhenActive && !appActive) {
@@ -161,6 +185,20 @@
 	}
 }
 
+- (void)applicationDidChangeScreenParameters:(NSNotification *)aNotification
+{
+	[windows[0] removeChildWindow:helpWindow];
+	
+	[helpWindow close];
+	[windows makeObjectsPerformSelector:@selector(close)];
+	
+	[windows release];
+	windows = nil; // released when closed.
+	helpWindow = nil; // released when closed.
+	
+	
+	[self loadWindows];
+}
 
 #pragma mark IBActions
 
@@ -227,7 +265,7 @@
 
 - (void)keyDown:(NSEvent *)event
 {
-	if ([event window] == window) {
+	if ( [windows containsObject:[event window]]) {
 		unsigned short keyCode = [event keyCode];
 		if (keyCode == 12 || keyCode == 53) { // q || Esc
 			[NSApp terminate:self];
@@ -256,9 +294,11 @@
 
 - (void)toggleHelpDisplay
 {
+	if( windows.count == 0 )	return; // Unknown error
+	
 	if (!helpWindow) {
 		// Create helpWindow.
-		NSRect mainFrame = [[NSScreen mainScreen] frame];
+		NSRect mainFrame = [windows[0] frame];
 		NSRect helpFrame = NSZeroRect;
 		float width = 600;
 		float height = 200;
@@ -293,7 +333,7 @@
 		layer.cornerRadius = 15.0;
 		layer.alignmentMode = kCAAlignmentCenter;
 		
-		[window addChildWindow:helpWindow ordered:NSWindowAbove];
+		[windows[0] addChildWindow:helpWindow ordered:NSWindowAbove];
 	}
 	
 	if (showsHelpWhenActive) {
@@ -311,7 +351,8 @@
 	[defaults synchronize];
 	
 	// Show or hide the shade layer's view appropriately.
-	[[[window contentView] animator] setHidden:!shadyEnabled];
+	for( NSWindow* window in windows )
+		[[[window contentView] animator] setHidden:!shadyEnabled];
 	
 	// Modify help text shown when we're frontmost.
 	if (helpWindow) {
@@ -324,8 +365,16 @@
 	[stateMenuItemStatusBar setTitle:(shadyEnabled) ? STATE_MENU : STATE_MENU_OFF];
 	
 	// Update status item's regular and alt/selected images.
-	[statusItem setImage:(shadyEnabled) ? STATUS_MENU_ICON : STATUS_MENU_ICON_OFF];
-	[statusItem setAlternateImage:(shadyEnabled) ? STATUS_MENU_ICON_ALT : STATUS_MENU_ICON_OFF_ALT];
+	
+	NSImage* image = (shadyEnabled) ? STATUS_MENU_ICON : STATUS_MENU_ICON_OFF;
+	[image setTemplate:YES];
+
+	NSImage* altImage = (shadyEnabled) ? STATUS_MENU_ICON_ALT : STATUS_MENU_ICON_OFF_ALT;
+	[altImage setTemplate:YES];
+
+	
+	[statusItem setImage:image];
+	[statusItem setAlternateImage:altImage];
 	
 	// Enable/disable slider.
 	[opacitySlider setEnabled:shadyEnabled];
@@ -340,14 +389,23 @@
 	float normalisedOpacity = MIN(MAX_OPACITY, MAX(newOpacity, 0.0));
 	if (normalisedOpacity != opacity) {
 		opacity = normalisedOpacity;
-		[[[window contentView] layer] setOpacity:opacity];
 		
 		NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 		[defaults setFloat:opacity forKey:KEY_OPACITY];
 		[defaults synchronize];
 		
-		[opacitySlider setFloatValue:(1.0 - opacity)];
 	}
+	
+	for( NSWindow* window in windows )
+		[[[window contentView] layer] setOpacity:opacity];
+	
+	[opacitySlider setFloatValue:(1.0 - opacity)];
+	
+}
+
+-(float)opacity
+{
+	return opacity;
 }
 
 

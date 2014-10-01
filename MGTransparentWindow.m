@@ -49,7 +49,8 @@
 
 - (void)keyDown:(NSEvent *)event
 {
-	[[self delegate] keyDown:event];
+	if( [[self delegate] respondsToSelector:@selector(keyDown:)] )
+		[[self delegate] performSelector:@selector(keyDown:) withObject:event];
 }
 
 
